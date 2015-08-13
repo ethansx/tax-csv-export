@@ -1,0 +1,26 @@
+<?php $states = Mage::getModel('directory/country')->load('US')->getRegions(); ?>
+<h2>Tax Report Export</h2>
+<form class="tax-export-form"
+      action="<?php echo Mage::helper('adminhtml')->getUrl("gaugeinteractive_taxexport/adminhtml_index/export"); ?>"
+    >
+    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>"/>
+
+    <label for="taxexport_start_date">Start Date:</label>
+    <input id="taxexport_start_date" type="text" name="start_date" placeholder="07/01/2015" required>
+    <br>
+
+    <label for="taxexport_end_date">End Date:</label>
+    <input id="taxexport_end_date" type="text" name="end_date" placeholder="08/01/2015" required>
+
+    <br>
+
+    <label for="state">State</label>
+    <select id="state" name="state">
+        <?php foreach ($states as $state): ?>
+            <?php $code = $state->getCode(); ?>
+            <option value="<?php echo $code ?>" <?php echo ($code == 'GA') ? 'selected' : '' ;?>
+                    required><?php echo $code ?></option>
+        <?php endforeach; ?>
+    </select>
+    <input type="submit" value="Submit">
+</form>

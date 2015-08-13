@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout>
+    <gaugeinteractive_taxexport_adminhtml_index_index>
+        <reference name="head">
+            <action method="addCss"><name>gaugeinteractive/taxexport/calendar.css</name></action>
+            <action method="addCss"><name>gaugeinteractive/taxexport/form.css</name></action>
+            <action method="addJs"><script>lib/jquery/jquery-1.10.2.min.js</script></action>
+            <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
+            <action method="addJs"><file>gaugeinteractive/taxexport/jquery-ui.js</file></action>
+            <action method="addJs"><file>gaugeinteractive/taxexport/calendar.js</file></action>
+        </reference>
+        <reference name="content">
+            <block type="adminhtml/template" name="gaugeinteractive.taxexport"
+                   template="gaugeinteractive/taxexport.phtml"/>
+        </reference>
+    </gaugeinteractive_taxexport_adminhtml_index_index>
+</layout>

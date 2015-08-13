@@ -1,0 +1,41 @@
+<config>
+    <menu>
+        <system>
+            <children>
+                <gaugeinteractive_extensions translate="title">
+                    <title>Gauge Interactive</title>
+                    <sort_order>1</sort_order>
+                    <children>
+                        <taxexport translate="title" module="gaugeinteractive_taxexport">
+                            <title>Tax Export</title>
+                            <action>gaugeinteractive_taxexport/adminhtml_index/index</action>
+                            <sort_order>120</sort_order>
+                        </taxexport>
+                    </children>
+                </gaugeinteractive_extensions>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <taxexport>
+                                        <title>Gauge Interactive - Tax Export</title>
+                                    </taxexport>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
